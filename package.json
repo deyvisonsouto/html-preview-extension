@@ -3,9 +3,17 @@
   "displayName": "HTML Preview",
   "description": "Instantly preview HTML files inside the editor. One click, live reload on save, full asset support.",
   "version": "0.0.1",
-  "publisher": "deyvison-souto",
+  "publisher": "deyvisonsouto",
   "license": "MIT",
   "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deyvisonsouto/html-preview-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deyvisonsouto/html-preview-extension/issues"
+  },
+  "homepage": "https://github.com/deyvisonsouto/html-preview-extension#readme",
   "engines": {
     "vscode": "^1.75.0"
   },
