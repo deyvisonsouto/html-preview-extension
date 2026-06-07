@@ -1,8 +1,8 @@
 {
-  "name": "html-preview",
-  "displayName": "HTML Preview",
-  "description": "Instantly preview HTML files inside the editor. One click, live reload on save, full asset support.",
-  "version": "0.0.1",
+  "name": "html-previewer",
+  "displayName": "HTML Previewer 2.0",
+  "description": "Modern, dependency-free HTML preview for VS Code. One click, live reload, zero config — a fresh take on the abandoned html-preview classic.",
+  "version": "2.0.1",
   "publisher": "deyvisonsouto",
   "license": "MIT",
   "icon": "icon.png",
@@ -31,7 +31,7 @@
     "static"
   ],
   "galleryBanner": {
-    "color": "#E44D26",
+    "color": "#1E1E1E",
     "theme": "dark"
   },
   "activationEvents": [
@@ -41,30 +41,52 @@
   "contributes": {
     "commands": [
       {
-        "command": "htmlPreview.open",
+        "command": "htmlPreviewer.open",
         "title": "Preview HTML",
         "icon": "$(open-preview)",
-        "category": "HTML Preview"
+        "category": "HTML Previewer"
+      },
+      {
+        "command": "htmlPreviewer.refresh",
+        "title": "Refresh Preview",
+        "icon": "$(refresh)",
+        "category": "HTML Previewer"
       }
     ],
     "menus": {
       "editor/title": [
         {
           "when": "resourceLangId == html",
-          "command": "htmlPreview.open",
+          "command": "htmlPreviewer.open",
           "group": "navigation"
+        },
+        {
+          "when": "activeWebviewPanelId == htmlPreviewer",
+          "command": "htmlPreviewer.refresh",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "when": "resourceLangId == html",
+          "command": "htmlPreviewer.open",
+          "group": "navigation@10"
         }
       ],
       "commandPalette": [
         {
-          "command": "htmlPreview.open",
+          "command": "htmlPreviewer.open",
           "when": "resourceLangId == html"
+        },
+        {
+          "command": "htmlPreviewer.refresh",
+          "when": "activeWebviewPanelId == htmlPreviewer || resourceLangId == html"
         }
       ]
     },
     "keybindings": [
       {
-        "command": "htmlPreview.open",
+        "command": "htmlPreviewer.open",
         "key": "ctrl+shift+v",
         "mac": "cmd+shift+v",
         "when": "editorLangId == html"
